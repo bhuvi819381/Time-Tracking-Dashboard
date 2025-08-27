@@ -3,6 +3,7 @@ import ProfileCard from "@/components/ProfileCard";
 import { useState, useEffect } from "react";
 
 
+
 const App = () => {
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState<"daily" | "weekly" | "monthly">("weekly");
@@ -16,17 +17,15 @@ const App = () => {
     } catch (err) {
       console.error("Failed to load data.json", err);
     }
-  }, [])
+  }, []);
 
   return (
     <main className=" bg-Navy-950 p-6 flex gap-8 border border-white flex-col md:flex-row items-center justify-center">
       <ProfileCard selected={selected} setSelected={setSelected} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {
-          data.map((item, index) => (
-            <Card key={index} item={item} selected={selected} />
-          ))
-        }
+        {data.map((item, index) => (
+          <Card key={index} item={item} selected={selected} />
+        ))}
       </div>
     </main>
   );
