@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/bhuvi819381/Time-Tracking-Dashboard]
-- Live Site URL: [time-tracking-dashboard001.netlify.com]
+- Live Site URL: [https://time-tracking-dashboard001.netlify.app/]
 
 ## My process
 

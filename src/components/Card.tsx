@@ -10,6 +10,19 @@ const Card = ({
   selected: TimeframePeriod;
   index: number;
 }) => {
+
+  const getBackgroundClass = (title: string): string => {
+  switch (title) {
+    case 'Work': return 'bg-Work';
+    case 'Play': return 'bg-Play';
+    case 'Study': return 'bg-Study';
+    case 'Exercise': return 'bg-Exercise';
+    case 'Social': return 'bg-Social';
+    case 'Self Care': return 'bg-Self-Care';
+    default: return 'bg-gray-400';
+  }
+};
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,7 +32,7 @@ const Card = ({
         delay: index * 0.1,
       }}
       whileTap={{ scale: 0.95 }}
-      className={`md:w-[255px] w-full h-full md:h-[242px] rounded-[14px] relative bg-${item.title.replace(/\s+/g, "-")} cursor-pointer hover:opacity-70 overflow-hidden outline-0`}
+      className={`md:w-[255px] w-full h-full md:h-[242px] rounded-[14px] relative ${getBackgroundClass(item.title)} cursor-pointer hover:opacity-70 overflow-hidden outline-0`}
     >
       <div className=" absolute -top-1 right-5">
         <img
